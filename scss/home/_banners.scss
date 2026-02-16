@@ -1,0 +1,147 @@
+@use "../variables";
+
+.banner-swiper {
+  border-radius: 8px;
+  .swiper-pagination {
+    position: absolute !important;
+    bottom: 10px !important;
+  }
+}
+
+.banner-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  height: 520px;
+  .banner-content {
+    padding-top: 50px;
+    h2 {
+      transition: all 0.5s ease;
+    }
+    .banner-btn {
+      a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #ffffff;
+        font-weight: 600;
+        transition: 0.5s ease;
+        &:hover {
+          color: variables.$secondary;
+        }
+      }
+    }
+    @media (max-width: 1024px) {
+      padding-top: 0;
+    }
+
+    @media (max-width: 640px) {
+      width: 100%;
+      z-index: 2;
+    }
+  }
+
+  &:hover {
+    .banner-content h2 {
+      color: variables.$primary;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    height: 400px;
+    padding: 30px;
+  }
+
+  @media (max-width: 768px) {
+    height: 300px;
+    padding: 15px;
+  }
+}
+
+.side-banner {
+  position: relative;
+  padding: 25px 10px;
+  border: 2px solid #ffa500;
+  border-radius: 8px;
+  .product-thumb-image {
+    overflow: hidden;
+    .banner-logo {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        transition: 0.5s ease;
+      }
+      .product-img-hover {
+        position: absolute;
+        inset: 0;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  .side-banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .stock-bar-wrapper {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 90%;
+      .stock-bar {
+        height: 8px;
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        background: #c5c9cd;
+        .inner-bar {
+          height: 100%;
+          width: 50%;
+          background-color: variables.$primary;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+  .hot-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 2px 12px;
+    border-radius: 4px;
+    background-color: variables.$primary;
+  }
+  &:hover {
+    .product-thumb-image {
+      a {
+        .product-img {
+          opacity: 0;
+        }
+        .product-img-hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.side-banner-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: white;
+  padding: 7px 12px;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+  background-color: #409667;
+  &:hover {
+    background-color: variables.$primary;
+  }
+}

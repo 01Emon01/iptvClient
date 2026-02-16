@@ -1,0 +1,136 @@
+@use "../variables";
+
+.xz-zClass-search_product_form {
+  display: flex;
+  align-items: center;
+  padding: 0 5px 0 15px;
+  border-radius: 100px;
+  background-color: #ffffff;
+  height: 100%;
+  &:hover {
+    border: 1px solid variables.$primary;
+  }
+  .search-product_field {
+    display: flex;
+    align-items: center;
+    input {
+      width: 500px;
+      padding: 10px 2px;
+      font-size: 14px;
+      line-height: 25px;
+      border: none;
+      outline: none;
+      @media (max-width: 1280px) {
+        width: 100%;
+      }
+    }
+    button {
+      padding: 10px;
+      border-radius: 100px;
+      background-color: #171717;
+      cursor: pointer;
+      transition: 0.5s ease;
+      &:hover {
+        background-color: variables.$secondary;
+      }
+    }
+    @media (max-width: 1280px) {
+      width: 100%;
+    }
+  }
+  @media (max-width: 1280px) {
+    width: 100%;
+  }
+}
+
+.contact-form {
+  max-width: 600px;
+  input {
+    padding: 10px 20px;
+    font-size: 14px;
+    line-height: 25px;
+    border: 1px solid #cdd3db;
+    outline: none;
+    border-radius: 999px;
+    width: 100%;
+    transition: 0.3s ease;
+    &:focus {
+      border: 1px solid #161616;
+    }
+  }
+  textarea {
+    padding: 10px 20px;
+    font-size: 14px;
+    line-height: 25px;
+    border: 1px solid #cdd3db;
+    outline: none;
+    border-radius: 20px;
+    width: 100%;
+    height: 200px;
+    resize: none;
+    transition: 0.3s ease;
+    &:focus {
+      border: 1px solid #161616;
+    }
+  }
+  .contact-btn {
+    padding: 10px 40px;
+    background-color: #161616;
+    color: #ffffff;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    &:hover {
+      background-color: #000000;
+    }
+  }
+}
+
+.auth-close-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.form-log {
+  input {
+    padding: 11px 10px 11px 14px;
+    outline: 0;
+    box-shadow: none;
+    width: 100%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #c9ccd1;
+    transition: all 0.3s ease-in-out;
+    &:hover,
+    &:focus {
+      border: 1px solid variables.$primary;
+    }
+  }
+  .xz-auth-btn {
+    width: 100%;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 24px;
+    text-align: center;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background-color: variables.$primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      background-color: variables.$secondary;
+    }
+  }
+}

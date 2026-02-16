@@ -1,0 +1,27 @@
+@use "./base/header";
+@use "./base/forms";
+@use "./variables";
+@use "./base/navbar";
+@use "./base/products";
+@use "./base/footer";
+@use "./home/banners";
+@use "./home/services";
+@use "./shop/filter";
+@use "./shop/shop_content";
+@use "./jinja/product_details";
+
+.swiper-pagination {
+  position: relative !important;
+  bottom: auto !important;
+  top: auto !important;
+  left: auto !important;
+  margin-top: 10px;
+  .swiper-pagination-bullet {
+    background-color: variables.$secondary;
+    transition: all 0.3s ease;
+  }
+  .swiper-pagination-bullet-active {
+    width: 20px;
+    border-radius: 8px;
+  }
+}

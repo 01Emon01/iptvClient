@@ -1,0 +1,81 @@
+@use "../variables";
+
+.xz-zClass-footer_wrapper {
+  background-color: #eaeaea;
+}
+
+.footer-links-wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-menu-list {
+  li {
+    font-weight: 500;
+    transition: 0.5s ease;
+    &:hover {
+      color: variables.$secondary;
+    }
+  }
+}
+
+.footer-menu-list.style-2 {
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    cursor: pointer;
+    .footer-icon {
+      display: block;
+      position: relative;
+      padding-right: 8px;
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        height: 16px;
+        width: 1px;
+        background-color: black;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.2;
+      }
+    }
+    .footer-menu-conent {
+      transition: 0.5s ease;
+    }
+    &:hover {
+      color: inherit;
+      .footer-menu-conent {
+        color: variables.$secondary;
+      }
+    }
+  }
+}
+
+.ft-social-list {
+  li {
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 45px;
+      width: 45px;
+      border-radius: 50%;
+      transition: 0.5s ease;
+    }
+    &:hover {
+      a {
+        color: #ffff;
+        background-color: variables.$primary;
+      }
+    }
+  }
+}

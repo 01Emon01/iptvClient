@@ -1,0 +1,16 @@
+$primary: #ffa500;
+$secondary: #c70036;
+
+.primary-color {
+  color: $primary;
+}
+.secondary-color {
+  color: $secondary;
+}
+
+.bg-primary-color {
+  background-color: $primary;
+}
+.bg-secondary-color {
+  background-color: $secondary;
+}

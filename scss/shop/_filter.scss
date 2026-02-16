@@ -1,0 +1,203 @@
+@use "../variables";
+
+.mk-zClass-filter-wrap {
+  max-width: 280px;
+  width: 100%;
+  background: #ffff;
+  @media (max-width: 1280px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    background-clip: padding-box;
+    outline: 0;
+    max-width: 320px;
+    transform: translateX(-100%);
+    transition: all 0.3s ease-in-out;
+  }
+  &.show {
+    transform: none;
+  }
+  .inner-filter-wrapper {
+    padding: 0;
+    isolation: isolate;
+    height: 100%;
+    width: 100%;
+    max-height: none;
+    display: grid;
+    grid-auto-rows: auto minmax(0, 1fr) auto;
+    align-content: start;
+    .filter-header {
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 15px 10px;
+      position: relative;
+      text-transform: capitalize;
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: 500;
+      box-shadow: 0 -5px 18px 5px #40485750;
+      .filter-close-icon {
+        transition: 0.5s ease;
+        &:hover {
+          color: variables.$primary;
+        }
+      }
+    }
+    .filter-body {
+      height: unset;
+      @media (max-width: 1280px) {
+        padding: 15px 20px;
+        overscroll-behavior-y: contain;
+        overflow-y: auto;
+      }
+      .filter-category-widget {
+        border-radius: 10px;
+        margin-bottom: 24px;
+        overflow: hidden;
+        h6 {
+          background-color: #eaeaea;
+        }
+        ul {
+          padding: 0 18px;
+          li {
+            a {
+              font-weight: 500;
+              font-size: 15px;
+              line-height: 20px;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 15px 0;
+              position: relative;
+              transition: 0.5s ease;
+              &:hover {
+                color: variables.$primary;
+              }
+            }
+          }
+        }
+      }
+      .filter-widget {
+        margin-bottom: 24px;
+        padding-bottom: 24px;
+        &:not(:last-child) {
+          border-bottom: 1px solid #e5e7eb;
+        }
+        .filter-widget-title {
+          margin-bottom: 16px;
+          font-weight: 700;
+          font-size: 18px;
+        }
+        .widget-body-items {
+          display: grid;
+          gap: 10px;
+          fieldset {
+            label {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+    .filter-bottom {
+      box-shadow: 0 5px 18px 5px #4048574d;
+      padding: 15px;
+      background-color: #ffffff;
+      .reset-filter {
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 24px;
+        text-align: center;
+        padding: 10px 16px;
+        border-radius: 8px;
+        background-color: variables.$primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        &:hover {
+          background-color: variables.$secondary;
+        }
+        span {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+.filter-check {
+  padding: 0;
+  position: relative;
+  background: #0000;
+  cursor: pointer;
+  outline: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  border: 1px solid #cdced2;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  &::before {
+    width: 10px;
+    height: 10px;
+    font-weight: 500;
+    content: "";
+    position: absolute;
+    background-color: variables.$primary;
+    border-radius: 1px;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease-in-out;
+  }
+  &:checked {
+    border: 1px solid variables.$primary;
+  }
+  &:checked::before {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.widget-price {
+  form {
+    fieldset {
+      input {
+        box-shadow: inset 2px 2px 2px 0 #0000001a;
+        border: 1px solid #e5e7eb;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 9px;
+        border-radius: 3px;
+        outline: none;
+        width: 100%;
+        transition: 0.5s ease-in-out;
+        &:hover {
+          border: 1px solid variables.$primary;
+        }
+      }
+    }
+    .btn-filter-price {
+      border: 1px solid #e5e7eb;
+      border-radius: 3px;
+      padding: 6px 18px;
+      outline: none;
+      transition: 0.3s ease-in-out;
+      font-weight: 600;
+      &:hover {
+        color: variables.$primary;
+      }
+    }
+  }
+}

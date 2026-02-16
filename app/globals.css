@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  min-width: 320px;
+}
+
+@layer utilities {
+  .container,
+  .sm\:container,
+  .md\:container,
+  .lg\:container,
+  .xl\:container,
+  .\32xl\:container {
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .container,
+    .sm\:container {
+      max-width: 710px;
+    }
+  }
+  @media (min-width: 768px) {
+    .container,
+    .sm\:container,
+    .md\:container {
+      max-width: 930px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container,
+    .sm\:container,
+    .md\:container,
+    .lg\:container {
+      max-width: 1140px;
+    }
+  }
+  @media (min-width: 1280px) {
+    .container,
+    .sm\:container,
+    .md\:container,
+    .lg\:container,
+    .xl\:container {
+      max-width: 1480px;
+    }
+  }
+  @media (min-width: 1536px) {
+    .container,
+    .sm\:container,
+    .md\:container,
+    .lg\:container,
+    .xl\:container,
+    .\32xl\:container {
+      max-width: 1620px;
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  -webkit-text-fill-color: #000;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}

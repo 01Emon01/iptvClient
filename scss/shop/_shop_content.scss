@@ -1,0 +1,31 @@
+@use "../variables";
+
+.filterShop-button {
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border: 1px solid #c3cad4;
+  border-radius: 1000px;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    color: #ffffff;
+    background-color: variables.$secondary;
+  }
+}
+
+.mk-grid-layout {
+  display: grid;
+  column-gap: 30px;
+  row-gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 768px) {
+    row-gap: 10px;
+    column-gap: 10px;
+  }
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
