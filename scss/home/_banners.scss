@@ -66,13 +66,15 @@
   border: 2px solid #ffa500;
   border-radius: 8px;
   .product-thumb-image {
+    position: relative;
     overflow: hidden;
-    .banner-logo {
-      position: relative;
-      display: flex;
-      align-items: center;
+    a {
       justify-content: center;
+      align-items: center;
+      display: flex;
       img {
+        height: auto;
+        width: auto;
         transition: 0.5s ease;
       }
       .product-img-hover {

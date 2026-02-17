@@ -50,16 +50,16 @@ export default function Footer() {
                 <div className="footer-links-content">
                   <ul className="footer-menu-list grid gap-3">
                     <li>
-                      <Link href={"/shop?c=electronics"}>Home</Link>
+                      <Link href={"/"}>Home</Link>
                     </li>
                     <li>
-                      <Link href={"/shop?c=cosmetics"}>Shop</Link>
+                      <Link href={"/shop"}>Shop</Link>
                     </li>
                     <li>
-                      <Link href={"/shop?c=bags"}>IPTV Box</Link>
+                      <Link href={"/shop?c=iptv-box"}>IPTV Box</Link>
                     </li>
                     <li>
-                      <Link href={"/shop?c=perfumes"}>TV Subs</Link>
+                      <Link href={"/shop?c=tv-subs"}>TV Subs</Link>
                     </li>
                   </ul>
                 </div>

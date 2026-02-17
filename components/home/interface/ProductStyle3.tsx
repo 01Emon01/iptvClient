@@ -60,8 +60,8 @@ Can you provide more details?
         </div>
         <div className="hidden sm:flex stock-bar-wrapper mb-3 sm:mb-8">
           <div className="flex items-center justify-between w-full text-sm mb-2">
+            <span>Sold: {data.sales}</span>
             <span>Available: {data.stock}</span>
-            <span>Sales: {data.sales}</span>
           </div>
           <div className="stock-bar">
             <div className="inner-bar"></div>
