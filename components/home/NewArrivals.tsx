@@ -32,6 +32,10 @@ export default async function NewArrivals({ data }: DataProps) {
     .filter((p) => p.id !== spFirst?.id)
     .filter((p) => p.id !== spSecond?.id)
     .slice(0, 2);
+  const rpSec = data
+    .filter((p) => p.id !== spFirst?.id)
+    .filter((p) => p.id !== spSecond?.id)
+    .slice(2, 4);
   return (
     <div className="xz-zClass-arrivals_wrapper pt-5 pb-6">
       <div className="container mx-auto px-4">
@@ -62,7 +66,7 @@ export default async function NewArrivals({ data }: DataProps) {
           </div>
           <div className="grid-item4">
             <ul className="product-list-wrap">
-              {rpFirst.map((item) => (
+              {rpSec.map((item) => (
                 <li key={item.id}>
                   <ProductStyle1 data={item} />
                 </li>

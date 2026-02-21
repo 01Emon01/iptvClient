@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { BsChevronRight } from "react-icons/bs";
 import ProductImage from "./packages/ProductImage";
@@ -29,7 +28,11 @@ Link: ${process.env.NEXT_PUBLIC_SITE_URL}/product/${data.id}
 
 Can you provide more details?
 `;
-  const whatsappUrl = `https://wa.me/0502368942?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/9710502368942?text=${encodeURIComponent(message)}`;
+  const percentSold =
+    data.sales + data.stock > 0
+      ? (data.sales / (data.sales + data.stock)) * 100
+      : 0;
   return (
     <div className="side-banner h-full w-full">
       <div className="product-thumb-image">
@@ -45,16 +48,16 @@ Can you provide more details?
           {data.discount ? (
             <>
               <span className="secondary-color text-sm sm:text-lg font-bold">
-                {data.discount}
+                <bdi>{data.discount} د.إ</bdi>
               </span>
               <span className="text-gray-700 text-sm sm:text-base line-through">
-                {data.price}
+                <bdi>{data.price} د.إ</bdi>
               </span>
             </>
           ) : (
             <>
               <span className="secondary-color text-sm sm:text-lg font-bold">
-                {data.price}
+                <bdi>{data.price} د.إ</bdi>
               </span>
             </>
           )}
@@ -62,13 +65,21 @@ Can you provide more details?
         <div className="hidden sm:flex stock-bar-wrapper mb-3 sm:mb-8">
           <div className="flex items-center justify-between w-full text-sm mb-2">
             <span>Sold: {data.sales}</span>
-            <span>Available: {data.stock}</span>
+            <span>Stock: {data.stock}</span>
           </div>
           <div className="stock-bar">
-            <div className="inner-bar"></div>
+            <div
+              className="inner-bar"
+              style={{ width: `${percentSold}%` }}
+            ></div>
           </div>
         </div>
-        <a href={whatsappUrl} className="side-banner-btn-link">
+        <a
+          href={whatsappUrl}
+          className="side-banner-btn-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div className="side-banner-btn">
             <span className="text-[12px] sm:text-base">Whatsapp</span>
             <BsChevronRight />

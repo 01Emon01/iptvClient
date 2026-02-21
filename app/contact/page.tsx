@@ -1,3 +1,7 @@
+import ContactForm from "@/components/contact/ContactForm";
+import ContactSubmitBtn from "@/components/contact/ContactSubmitBtn";
+import submitContact from "@/helpers/submitContact";
+
 export default async function page() {
   return (
     <div className="xz-contant-wrapper py-10">
@@ -28,32 +32,7 @@ export default async function page() {
               we look forward to hearing from you soon.
             </p>
           </div>
-          <form action="">
-            <div className="inner-form flex flex-col gap-5 mb-5">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Your Name"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Your Email"
-                />
-              </div>
-              <textarea
-                name="message"
-                id="message"
-                placeholder="Enter your message"
-              />
-            </div>
-            <button type="submit" className="contact-btn">
-              Send
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </div>
     </div>

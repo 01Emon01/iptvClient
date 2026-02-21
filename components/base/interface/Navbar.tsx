@@ -13,13 +13,13 @@ export default function Navbar() {
           <div className="hidden md:flex items-center justify-center md:w-4/8 lg:w-3/7 px-2">
             <Search />
           </div>
-          <div className="w-2/7 px-2 flex item-center justify-end">
+          {/* <div className="w-2/7 px-2 flex item-center justify-end">
             <div className="navbar-btns-right text-gray-800">
               <div className="nav-icons h-full">
                 <AccountBtn />
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

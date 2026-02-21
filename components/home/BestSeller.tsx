@@ -25,7 +25,12 @@ type DataProps = {
 };
 
 export default function BestSeller({ data }: DataProps) {
-  const products = data.slice(0, 4);
+  const spFirst = data.find((p) => p.specialsAsSecond?.length > 0);
+  const spSecond = data.find((p) => p.specialsAsThird?.length > 0);
+  const products = data
+    .filter((p) => p.id !== spFirst?.id)
+    .filter((p) => p.id !== spSecond?.id)
+    .slice(4, 8);
   return (
     <div className="mk-zClass-bestSeller_wrapper pb-7">
       <div className="container mx-auto px-4">

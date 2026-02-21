@@ -30,6 +30,7 @@ export default async function Divider2() {
   const restProducts = data
     .filter((p) => p.id !== specialProduct?.id)
     .slice(0, 2);
+  const rSecPrd = data.filter((p) => p.id !== specialProduct?.id).slice(2, 6);
   return (
     <div className="py-8">
       <div className="container mx-auto">
@@ -51,7 +52,7 @@ export default async function Divider2() {
           </div>
           <div className="w-full px-2">
             <div className="grid grid-cols-2 xl:grid-cols-4 gap-2">
-              {data.map((product) => (
+              {rSecPrd.map((product) => (
                 <ProductStyle3 key={product.id} data={product} />
               ))}
             </div>

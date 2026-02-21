@@ -9,6 +9,7 @@
 @use "./shop/filter";
 @use "./shop/shop_content";
 @use "./jinja/product_details";
+@use "./base/mobile_slider";
 
 .swiper-pagination {
   position: relative !important;

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { BsChevronRight } from "react-icons/bs";
 import ProductImageStyle3 from "./packages/ProductImageStyle3";
@@ -35,7 +34,11 @@ Link: ${process.env.NEXT_PUBLIC_SITE_URL}/product/${data.id}
 
 Can you provide more details?
 `;
-  const whatsappUrl = `https://wa.me/0502368942?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/9710502368942?text=${encodeURIComponent(message)}`;
+  const percentSold =
+    data.sales + data.stock > 0
+      ? (data.sales / (data.sales + data.stock)) * 100
+      : 0;
   return (
     <div className="product-card style-1 ">
       <div className="product-thumb-image">
@@ -56,15 +59,15 @@ Can you provide more details?
               {data.discount ? (
                 <>
                   <span className="secondary-color new-price text-xl font-semibold">
-                    ${data.discount}
+                    <bdi>{data.discount} د.إ</bdi>
                   </span>
                   <span className="old-price line-through text-gray-500">
-                    ${data.price}
+                    <bdi>{data.price} د.إ</bdi>
                   </span>
                 </>
               ) : (
                 <span className="secondary-color new-price text-xl font-semibold">
-                  ${data.price}
+                  <bdi>{data.price} د.إ</bdi>
                 </span>
               )}
             </p>
@@ -75,10 +78,13 @@ Can you provide more details?
               <span>Stock: {data.stock}</span>
             </div>
             <div className="stock-bar">
-              <div className="inner-bar"></div>
+              <div
+                className="inner-bar"
+                style={{ width: `${percentSold}%` }}
+              ></div>
             </div>
           </div>
-          <a href={whatsappUrl}>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
             <div className="product-shop-btn">
               <span className="text-[12px] sm:text-base">Whatsapp</span>
               <BsChevronRight />

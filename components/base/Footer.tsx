@@ -2,7 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { CiLocationOn, CiMail, CiPhone } from "react-icons/ci";
 
-export default function Footer() {
+type Settings = {
+  id: string;
+  supportEmail: string;
+  supportNo: string;
+  footerInfo: string;
+};
+
+type DataProps = {
+  settings: Settings;
+};
+
+export default function Footer({ settings }: DataProps) {
   return (
     <div className="xz-zClass-footer_wrapper text-gray-700">
       <div className="pt-12 pb-8 border-b border-gray-300">
@@ -18,11 +29,7 @@ export default function Footer() {
                   priority={false}
                 />
               </Link>
-              <div className="max-w-140">
-                offers IPTV boxes and TV subscriptions with global access,
-                crystal-clear streaming, and 24/7 expert support-your gateway to
-                non-stop entertainment.
-              </div>
+              <div className="max-w-140">{settings.footerInfo}</div>
             </div>
             <div className="footer-links-wrap w-full">
               <div className="flex flex-col gap-4">
@@ -74,9 +81,6 @@ export default function Footer() {
                       <Link href={"/contact"}>Contact Us</Link>
                     </li>
                     <li>
-                      <Link href={"/FAQs"}>FAQs</Link>
-                    </li>
-                    <li>
                       <Link href={"/terms"}>Terms & Conditions</Link>
                     </li>
                   </ul>
@@ -103,23 +107,13 @@ export default function Footer() {
                       <span className="footer-icon">
                         <CiPhone size={20} />
                       </span>
-                      <Link
-                        href={"tel:0502368942"}
-                        className="footer-menu-conent"
-                      >
-                        0502368942
-                      </Link>
+                      {settings.supportNo}
                     </li>
                     <li>
                       <span className="footer-icon">
                         <CiMail size={20} />
                       </span>
-                      <Link
-                        href={"mailto:makeupzone@support.com"}
-                        className="footer-menu-conent"
-                      >
-                        uaeiptvbox@support.com
-                      </Link>
+                      {settings.supportEmail}
                     </li>
                   </ul>
                 </div>

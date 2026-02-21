@@ -63,19 +63,19 @@
   gap: 12px;
   align-items: flex-start;
   .product-thumb-image {
-    aspect-ratio: 1;
+    position: relative;
     max-width: 122px;
     overflow: hidden;
     a {
       position: relative;
       display: flex;
-      height: 100%;
-      width: 100%;
+      height: auto;
+      width: auto;
       align-items: stretch;
       img {
         display: block;
-        height: 100%;
-        width: 100%;
+        height: auto;
+        width: auto;
         object-fit: cover;
         object-position: center;
         transition: 0.5s ease;
@@ -124,7 +124,7 @@
   @media (max-width: 768px) {
     flex-direction: column;
     .product-thumb-image {
-      max-width: 160px;
+      max-width: unset;
     }
   }
 }

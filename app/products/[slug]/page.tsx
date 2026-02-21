@@ -1,7 +1,6 @@
 import ProductDetailsList from "@/components/jinja/ProductDetailsList";
 import ProductDetailsSlider from "@/components/jinja/ProductDetailsSlider";
 import ProductTabList from "@/components/jinja/ProductTabList";
-import RelatedProducts from "@/components/jinja/RelatedProducts";
 
 type ProductProps = {
   params: {
@@ -30,7 +29,6 @@ export default async function page({ params }: ProductProps) {
         </div>
       </div>
       <ProductTabList desc={data.desc} />
-      <RelatedProducts />
     </div>
   );
 }

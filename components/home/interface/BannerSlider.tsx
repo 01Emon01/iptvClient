@@ -1,9 +1,17 @@
 "use client";
-import Link from "next/link";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function BannerSlider() {
+type Banners = {
+  id: string;
+  images: string[];
+};
+
+type DataProps = {
+  banners: Banners;
+};
+
+export default function BannerSlider({ banners }: DataProps) {
   return (
     <>
       <Swiper
@@ -14,26 +22,23 @@ export default function BannerSlider() {
         spaceBetween={10}
         className="banner-swiper"
       >
-        <SwiperSlide>
-          <div
-            className="banner-image"
-            style={{
-              background: "url(/banner-image.jpg)",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="banner-image"
-            style={{
-              background: "url(/banner-image.jpg)",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
-        </SwiperSlide>
+        {banners.images.map((item, i) => {
+          const normalizePath = () =>
+            item.replace(/\\/g, "/").replace(/^uploads\//, "");
+          return (
+            <SwiperSlide key={i}>
+              <div
+                className="banner-image"
+                style={{
+                  background: `url(${process.env.NEXT_PUBLIC_SITE_URL}/data/files/${normalizePath()})`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                  backgroundPosition: "50%, 50%",
+                }}
+              ></div>
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </>
   );
