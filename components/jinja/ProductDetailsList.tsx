@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BsChevronRight } from "react-icons/bs";
 
-type Categories = {
+type Category = {
   id: string;
   name: string;
   slug: string;
@@ -9,8 +9,7 @@ type Categories = {
 
 type DataProps = {
   name: string;
-  categories: Categories;
-  category: string;
+  category: Category;
   shortDesc: string;
   price: string;
   discount: string;
@@ -31,7 +30,7 @@ export default function ProductDetailsList({ data }: DetailsProps) {
             <p className="text-sm text-gray-700">
               Categories:{" "}
               <Link href={""} className="">
-                {data.categories.name}
+                {data.category.name}
               </Link>
             </p>
             <h5 className="product-details-name text-2xl font-semibold text-gray-800">

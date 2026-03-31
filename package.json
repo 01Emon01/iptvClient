@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node app.js",
+    "start": "node server.js",
     "lint": "eslint"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",
+    "axios": "^1.14.0",
     "motion": "^12.26.2",
     "next": "16.1.2",
     "react": "19.2.3",

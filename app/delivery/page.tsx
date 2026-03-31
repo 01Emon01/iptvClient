@@ -3,7 +3,7 @@ export const metadata = {
   description: "Delivery Information of UAE IPTV BOX",
 };
 
-export default function page() {
+export default async function Delivery() {
   return (
     <main className="container mx-auto px-4 md:px-10 xl:px-15 py-12 text-gray-700">
       <h1 className="text-3xl font-bold mb-8">Delivery Information</h1>

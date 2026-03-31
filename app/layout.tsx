@@ -3,8 +3,8 @@ import "./globals.css";
 import Header from "@/components/base/Header";
 import "../scss/main.scss";
 import Footer from "@/components/base/Footer";
-import Login from "@/components/auth/Login";
-import Register from "@/components/auth/Register";
+// import Login from "@/components/auth/Login";
+// import Register from "@/components/auth/Register";
 import { getSiteSettings } from "@/lib/getSiteSettings";
 import MobileSlider from "@/components/base/interface/MobileSlider";
 
@@ -15,7 +15,7 @@ const nunito = Nunito({
 export async function generateMetadata() {
   const data = await getSiteSettings();
   return {
-    metadataBase: new URL("http://localhost:3000"),
+    metadataBase: new URL("https://uaeiptvbox.net"),
     title: data.name,
     description: data.description,
     icons: {
@@ -24,15 +24,15 @@ export async function generateMetadata() {
     openGraph: {
       title: data.name,
       description: data.description,
-      url: "https://example.com",
+      url: "https://uaeiptvbox.net",
       siteName: data.name,
       locale: "en_US",
       type: "website",
       images: [
         {
-          url: "/dbs_logo.png",
-          width: 1200,
-          height: 630,
+          url: "/openGraph.png",
+          width: 1536,
+          height: 1024,
           alt: "Logo",
         },
       ],

@@ -6,18 +6,26 @@ type Category = {
   name: string;
 };
 
+type Specials = {
+  id: string;
+  createdAt: string;
+  fstPrd: string;
+  secPrd: string;
+  thirdPrd: string;
+  frthPrd: string;
+};
+
 type Product = {
   id: string;
   name: string;
-  categories: Category;
-  category: string;
-  images: string[];
+  category: Category;
+  images: string;
   price: string;
   discount: string;
   stock: number;
   sales: number;
-  specialsAsSecond: any[];
-  specialsAsThird: any[];
+  specialsAsSecond: Specials[];
+  specialsAsThird: Specials[];
 };
 
 type DataProps = {
@@ -25,9 +33,11 @@ type DataProps = {
 };
 
 export default function BestSeller({ data }: DataProps) {
-  const spFirst = data.find((p) => p.specialsAsSecond?.length > 0);
-  const spSecond = data.find((p) => p.specialsAsThird?.length > 0);
-  const products = data
+  const safeData = Array.isArray(data) ? data : [];
+
+  const spFirst = safeData.find((p) => p.specialsAsSecond?.length > 0);
+  const spSecond = safeData.find((p) => p.specialsAsThird?.length > 0);
+  const products = safeData
     .filter((p) => p.id !== spFirst?.id)
     .filter((p) => p.id !== spSecond?.id)
     .slice(4, 8);

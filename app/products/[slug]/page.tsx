@@ -8,12 +8,31 @@ type ProductProps = {
   };
 };
 
+type Category = {
+  id: string;
+  name: string;
+  slug: string;
+};
+
+type Product = {
+  id: string;
+  name: string;
+  category: Category;
+  images: string;
+  price: string;
+  discount: string;
+  stock: number;
+  sales: number;
+  desc: string;
+  shortDesc: string;
+};
+
 export default async function page({ params }: ProductProps) {
   const { slug } = await params;
   const res = await fetch(
     `${process.env.API_BASE_URL}/data/admin/products/${slug}`,
   );
-  const data = await res.json();
+  const data: Product = await res.json();
   return (
     <div className="mk-zClass-product_wrapper py-10">
       <div className="container mx-auto">

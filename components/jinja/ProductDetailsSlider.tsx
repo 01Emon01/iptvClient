@@ -1,13 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { Thumbs } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/thumbs";
 import DetailsImage from "./interface/DetailsImage";
 
-export default function ProductDetailsSlider({ images }: { images: string[] }) {
+export default function ProductDetailsSlider({ images }: { images: string }) {
+  const converted = JSON.parse(images);
   const [viewSwiper, setViewSwiper] = useState<any>(null);
 
   return (
@@ -19,8 +19,8 @@ export default function ProductDetailsSlider({ images }: { images: string[] }) {
         watchSlidesProgress
         style={{ width: "100%" }}
       >
-        {images.map((item) => (
-          <SwiperSlide>
+        {converted.map((item: string, i: string) => (
+          <SwiperSlide key={i}>
             <DetailsImage data={item} />
           </SwiperSlide>
         ))}
@@ -35,8 +35,8 @@ export default function ProductDetailsSlider({ images }: { images: string[] }) {
           style={{ width: "100%" }}
           className="product-details-slider-bottom"
         >
-          {images.map((item) => (
-            <SwiperSlide>
+          {converted.map((item: string, i: string) => (
+            <SwiperSlide key={i}>
               <div className="product-details-image-item overflow-hidden">
                 <DetailsImage data={item} />
               </div>

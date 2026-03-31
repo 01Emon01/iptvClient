@@ -1,17 +1,30 @@
 "use client";
-import submitContact from "@/helpers/submitContact";
 import ContactSubmitBtn from "./ContactSubmitBtn";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import { NodeApi } from "@/api/Axios";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "success">("idle");
+
+  const router = useRouter();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formdata = new FormData(form);
+    const { name, email, message } = Object.fromEntries(formdata.entries());
+    try {
+      await NodeApi.post("/contacts/upload", { name, email, message });
+      setStatus("success");
+    } catch (err) {
+      console.error(err);
+    }
+    form.reset();
+    router.refresh();
+  };
   return (
-    <form
-      action={async (formData) => {
-        const res = await submitContact(formData);
-        if (res?.success) setStatus("success");
-      }}
-    >
+    <form onSubmit={handleSubmit}>
       {status === "success" && (
         <p className="text-emerald-600 text-center mb-4">
           Message sent successfully!

@@ -2,11 +2,16 @@ import Link from "next/link";
 import { BsChevronRight } from "react-icons/bs";
 import ProductImage from "./packages/ProductImage";
 
+type Category = {
+  id: string;
+  name: string;
+};
+
 type Product = {
   id: string;
-  images: string[];
+  images: string;
   name: string;
-  category: string;
+  category: Category;
   price: string;
   discount: string;
   stock: number;
@@ -37,7 +42,7 @@ Can you provide more details?
     <div className="side-banner h-full w-full">
       <div className="product-thumb-image">
         <Link href={`/products/${data.id}`} className="product-logo-thumb">
-          <ProductImage data={data} />
+          <ProductImage data={data.images} />
         </Link>
       </div>
       <div className="side-banner-content pt-4">

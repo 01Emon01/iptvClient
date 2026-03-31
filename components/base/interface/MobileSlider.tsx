@@ -15,9 +15,9 @@ export default function MobileSlider() {
   const menu = usePopupStore((state) => state.menu);
   const toggleMenu = usePopupStore((state) => state.toggleMenu);
 
-  const [tab, setTab] = useState("categories");
+  const [tab, setTab] = useState<string>("links");
 
-  const toogleTab = (name: string) => {
+  const toggleTab = (name: string) => {
     setTab(name);
   };
 
@@ -63,7 +63,7 @@ export default function MobileSlider() {
                 <li
                   className={`mobile-tab-navItem ${tab === "links" && "active"}`}
                   role="presentation"
-                  onClick={() => toogleTab("links")}
+                  onClick={() => toggleTab("links")}
                 >
                   Menu
                 </li>
@@ -71,7 +71,7 @@ export default function MobileSlider() {
                 <li
                   className={`mobile-tab-navItem ${tab === "categories" && "active"}`}
                   role="presentation"
-                  onClick={() => toogleTab("categories")}
+                  onClick={() => toggleTab("categories")}
                 >
                   Categories
                 </li>

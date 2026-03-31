@@ -3,14 +3,19 @@ import BannerSlider from "./interface/BannerSlider";
 
 type Banner = {
   id: string;
-  images: string[];
+  images: string;
+};
+
+type Category = {
+  id: string;
+  name: string;
 };
 
 type Product = {
   id: string;
-  images: string[];
+  images: string;
   name: string;
-  category: string;
+  category: Category;
   price: string;
   discount: string;
   stock: number;

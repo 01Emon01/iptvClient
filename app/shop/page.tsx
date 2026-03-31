@@ -6,7 +6,7 @@ type Props = {
   };
 };
 
-export default async function page({ searchParams }: Props) {
+export default async function Shop({ searchParams }: Props) {
   return (
     <div className="mk-zClass-shop-content_wrapper py-14">
       <div className="container mx-auto px-4">

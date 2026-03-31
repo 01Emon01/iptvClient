@@ -143,8 +143,8 @@ export default function Footer({ settings }: DataProps) {
             </li>
           </ul> */}
           <div className="copyright-text text-center">
-            <span className="font-semibold">UAE IPTV BOX</span> © 2025. All
-            right reserved
+            <span className="font-semibold">UAE IPTV BOX</span> ©{" "}
+            {new Date().getFullYear()}. All right reserved
           </div>
         </div>
       </div>

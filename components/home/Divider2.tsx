@@ -6,17 +6,25 @@ type Category = {
   name: string;
 };
 
+type Specials = {
+  id: string;
+  createdAt: string;
+  fstPrd: string;
+  secPrd: string;
+  thirdPrd: string;
+  frthPrd: string;
+};
+
 type Product = {
   id: string;
   name: string;
-  categories: Category;
-  category: string;
-  images: string[];
+  category: Category;
+  images: string;
   price: string;
   discount: string;
   stock: number;
   sales: number;
-  specialsAsFourth: any[];
+  specialsAsFourth: Specials;
 };
 
 export default async function Divider2() {
@@ -25,12 +33,16 @@ export default async function Divider2() {
   );
   const data: Product[] = await res.json();
 
-  const specialProduct = data.find((p) => p.specialsAsFourth?.length > 0);
+  const specialProduct = (data ?? []).find(
+    (p) => p.specialsAsFourth?.frthPrd == p.id,
+  );
 
-  const restProducts = data
+  const restProducts = (data ?? [])
     .filter((p) => p.id !== specialProduct?.id)
     .slice(0, 2);
-  const rSecPrd = data.filter((p) => p.id !== specialProduct?.id).slice(2, 6);
+  const rSecPrd = (data ?? [])
+    .filter((p) => p.id !== specialProduct?.id)
+    .slice(2, 6);
   return (
     <div className="py-8">
       <div className="container mx-auto">

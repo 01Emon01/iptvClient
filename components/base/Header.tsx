@@ -3,7 +3,8 @@ import Link from "next/link";
 import { PiHeadphonesThin } from "react-icons/pi";
 import MobileIcons from "./interface/MobileIcons";
 import Navbar from "./interface/Navbar";
-import Navlink from "./interface/Navlink";
+import NavLink from "./interface/NavLink";
+import { Suspense } from "react";
 
 type Settings = {
   id: string;
@@ -15,7 +16,7 @@ type DataProps = {
   settings: Settings;
 };
 
-export default function Header({ settings }: DataProps) {
+export default async function Header({ settings }: DataProps) {
   return (
     <div className="xz-header-wrapper border-b border-gray-300 xl:border-0">
       <div className="xz-zClass-inner_header">
@@ -37,19 +38,29 @@ export default function Header({ settings }: DataProps) {
               </div>
               <div className="hidden md:flex items-center gap-6 lg:gap-8 justify-center md:w-4/8 lg:w-5/7 xl:w-3/7 px-2">
                 <div className="navbar-items-link text-sm lg:text-base">
-                  <Navlink href="/">Home</Navlink>
+                  <Suspense fallback={null}>
+                    <NavLink href="/">Home</NavLink>
+                  </Suspense>
                 </div>
                 <div className="navbar-items-link text-sm lg:text-base">
-                  <Navlink href="/shop">Shop</Navlink>
+                  <Suspense fallback={null}>
+                    <NavLink href="/shop">Shop</NavLink>
+                  </Suspense>
                 </div>
                 <div className="navbar-items-link text-sm lg:text-base">
-                  <Navlink href="/shop?c=iptv-box">IPTV Box</Navlink>
+                  <Suspense fallback={null}>
+                    <NavLink href="/shop?c=iptv-box">IPTV Box</NavLink>
+                  </Suspense>
                 </div>
                 <div className="navbar-items-link text-sm lg:text-base">
-                  <Navlink href="/shop?c=tv-subs">TV Subs</Navlink>
+                  <Suspense fallback={null}>
+                    <NavLink href="/shop?c=tv-subs">TV Subs</NavLink>
+                  </Suspense>
                 </div>
                 <div className="navbar-items-link text-sm lg:text-base">
-                  <Navlink href="/contact">Contact</Navlink>
+                  <Suspense fallback={null}>
+                    <NavLink href="/contact">Contact</NavLink>
+                  </Suspense>
                 </div>
               </div>
               <MobileIcons />

@@ -10,9 +10,8 @@ type Category = {
 type Product = {
   id: string;
   name: string;
-  categories: Category;
-  category: string;
-  images: string[];
+  category: Category;
+  images: string;
   price: string;
   discount: string;
   stock: number;
@@ -43,13 +42,13 @@ Can you provide more details?
     <div className="product-card style-1 ">
       <div className="product-thumb-image">
         <Link href={`/products/${data.id}`} className="card-image-link">
-          <ProductImageStyle3 data={data} />
+          <ProductImageStyle3 data={data.images} />
         </Link>
       </div>
       <div className="product-info">
         <div className="grid gap-2">
           <div className="bg-white">
-            <p className="text-gray-500 text-sm">{data.categories.name}</p>
+            <p className="text-gray-500 text-sm">{data.category.name}</p>
             <Link href={""} className="product-name font-semibold">
               {data.name}
             </Link>

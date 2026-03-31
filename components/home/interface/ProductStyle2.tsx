@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { BsChevronRight } from "react-icons/bs";
 import ProductImageStyle2 from "./packages/ProductImageStyle2";
@@ -8,17 +7,25 @@ type Category = {
   name: string;
 };
 
+type Specials = {
+  id: string;
+  createdAt: string;
+  fstPrd: string;
+  secPrd: string;
+  thirdPrd: string;
+  frthPrd: string;
+};
+
 type Product = {
   id: string;
   name: string;
-  categories: Category;
-  category: string;
-  images: string[];
+  category: Category;
+  images: string;
   price: string;
   discount: string;
   stock: number;
   sales: number;
-  specialsAsFourth: any[];
+  specialsAsFourth: Specials;
 };
 
 type dataProps = {
@@ -40,13 +47,13 @@ Can you provide more details?
     <div className="product-card style-2 h-full">
       <div className="product-thumb-image">
         <Link href={`/products/${data.id}`}>
-          <ProductImageStyle2 data={data} />
+          <ProductImageStyle2 data={data.images} />
         </Link>
       </div>
       <div className="product-info pt-6">
         <div className="grid gap-2">
           <div className="bg-white">
-            <p className="text-gray-500 text-sm mb-3">{data.categories.name}</p>
+            <p className="text-gray-500 text-sm mb-3">{data.category.name}</p>
             <Link
               href={`/products/${data.id}`}
               className="product-name text-left! text-[18px] font-semibold mb-2"

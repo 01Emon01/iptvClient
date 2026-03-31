@@ -1,16 +1,26 @@
 import ProductStyle3 from "../home/interface/ProductStyle3";
 
+type Category = {
+  id: string;
+  name: string;
+};
+
 type Product = {
   id: string;
-  images: string[];
+  images: string;
   name: string;
-  category: string;
+  category: Category;
   shortDesc: string;
   desc: string;
   price: string;
   discount: string;
   stock: number;
   sales: number;
+};
+
+type DataItems = {
+  product: Product;
+  category: Category;
 };
 
 type Props = {
@@ -38,7 +48,7 @@ export default async function ShopContent({ searchParams }: Props) {
   const res = await fetch(url, {
     cache: "no-store",
   });
-  const data: Product[] = await res.json();
+  const data: DataItems[] = await res.json();
   return (
     <div className="mk-zClass-spContent-area w-full">
       {/* <div className="mk-zClass-shopControls flex xl:hidden items-center justify-between flex-wrap gap-2 sm:gap-10 pb-4 mb-6 border-b border-gray-200">
@@ -49,7 +59,7 @@ export default async function ShopContent({ searchParams }: Props) {
       <div className="mk-zClass-gridLayout_wrapper">
         <div className="mk-grid-layout style-1">
           {data.map((item) => (
-            <ProductStyle3 data={item} key={item.id} />
+            <ProductStyle3 data={item.product} key={item.product.id} />
           ))}
         </div>
       </div>
