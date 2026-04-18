@@ -1,0 +1,14 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/contact/page": "/contact",
+  "/delivery/page": "/delivery",
+  "/page": "/",
+  "/privacy/page": "/privacy",
+  "/products/[slug]/page": "/products/[slug]",
+  "/refunds/page": "/refunds",
+  "/robots.txt/route": "/robots.txt",
+  "/shop/page": "/shop",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/terms/page": "/terms"
+}

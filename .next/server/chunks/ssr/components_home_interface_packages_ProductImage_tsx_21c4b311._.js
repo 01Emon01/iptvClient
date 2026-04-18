@@ -1,0 +1,3 @@
+module.exports=[91058,a=>{"use strict";var b=a.i(87924),c=a.i(71987);function d({data:a}){let d=JSON.parse(a),e=a=>a.replace(/\\/g,"/").replace(/^uploads\//,""),f=e(d[0]),g=e(d[1]??d[0]),h=({src:a,width:b,quality:c})=>`https://data.uaeiptvbox.net/data/files/${a}?w=${b}&q=${c||50}`;return(0,b.jsxs)(b.Fragment,{children:[(0,b.jsx)(c.default,{loader:h,src:f,width:250,height:250,alt:"product-image",priority:!1,className:"product-img"}),(0,b.jsx)(c.default,{loader:h,src:g,width:250,height:250,alt:"product-image-hover",priority:!1,className:"product-img-hover"})]})}a.s(["default",()=>d])}];
+
+//# sourceMappingURL=components_home_interface_packages_ProductImage_tsx_21c4b311._.js.map
