@@ -12,7 +12,8 @@ type DataProps = {
 };
 
 export default function BannerSlider({ banners }: DataProps) {
-  const converted = JSON.parse(banners.images);
+  // const converted = JSON.parse(banners.images);
+  const converted = banners.images;
   return (
     <>
       <Swiper

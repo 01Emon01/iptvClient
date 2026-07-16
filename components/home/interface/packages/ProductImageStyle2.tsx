@@ -6,7 +6,8 @@ type styleProps = {
 };
 
 export default function ProductImageStyle2({ data }: styleProps) {
-  const imagesData = JSON.parse(data);
+  const imagesData = data;
+  // const imagesData = JSON.parse(data);
   const normalizePath = (path: string) =>
     path.replace(/\\/g, "/").replace(/^uploads\//, "");
   const img = normalizePath(imagesData[0]);
