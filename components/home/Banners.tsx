@@ -32,8 +32,7 @@ export default async function Banners() {
   const res = await fetch(
     `${process.env.API_BASE_URL}/data/admin/featured/banners`,
   );
-  const data: Data = await res.json();
-  console.log(data);
+  console.log(res);
   return (
     // <div className="mk-zClass-banners_wrapper py-7">
     //   <div className="container mx-auto">
