@@ -48,7 +48,7 @@ export default async function RootLayout({
   const settings = await getSiteSettings();
   return (
     <html lang="en">
-      <body className={`${nunito.className} antialiased`}>
+      <body className={`${nunito.className} antialiased text-sm`}>
         <Header settings={settings} />
         {children}
         <Footer settings={settings} />
