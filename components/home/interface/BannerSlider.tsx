@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 type Banners = {
   id: string;
-  images: string;
+  images: string[];
 };
 
 type DataProps = {
@@ -12,7 +12,6 @@ type DataProps = {
 };
 
 export default function BannerSlider({ banners }: DataProps) {
-  // const converted = JSON.parse(banners.images);
   const converted = banners.images;
   return (
     <>

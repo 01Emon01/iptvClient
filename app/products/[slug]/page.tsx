@@ -18,7 +18,7 @@ type Product = {
   id: string;
   name: string;
   category: Category;
-  images: string;
+  images: string[];
   price: string;
   discount: string;
   stock: number;

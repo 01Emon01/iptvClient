@@ -6,8 +6,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/thumbs";
 import DetailsImage from "./interface/DetailsImage";
 
-export default function ProductDetailsSlider({ images }: { images: string }) {
-  const converted = JSON.parse(images);
+export default function ProductDetailsSlider({ images }: { images: string[] }) {
+  console.log(images);
+  const converted = images;
   const [viewSwiper, setViewSwiper] = useState<any>(null);
 
   return (
@@ -19,7 +20,7 @@ export default function ProductDetailsSlider({ images }: { images: string }) {
         watchSlidesProgress
         style={{ width: "100%" }}
       >
-        {converted.map((item: string, i: string) => (
+        {converted.map((item: string, i) => (
           <SwiperSlide key={i}>
             <DetailsImage data={item} />
           </SwiperSlide>
@@ -35,7 +36,7 @@ export default function ProductDetailsSlider({ images }: { images: string }) {
           style={{ width: "100%" }}
           className="product-details-slider-bottom"
         >
-          {converted.map((item: string, i: string) => (
+          {converted.map((item: string, i) => (
             <SwiperSlide key={i}>
               <div className="product-details-image-item overflow-hidden">
                 <DetailsImage data={item} />

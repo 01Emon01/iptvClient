@@ -3,7 +3,7 @@ import BannerSlider from "./interface/BannerSlider";
 
 type Banner = {
   id: string;
-  images: string;
+  images: string[];
 };
 
 type Category = {
