@@ -33,7 +33,7 @@ Link: ${process.env.NEXT_PUBLIC_SITE_URL}/product/${data.id}
 
 Can you provide more details?
 `;
-  const whatsappUrl = `https://wa.me/9710502368942?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/971566323742?text=${encodeURIComponent(message)}`;
   const percentSold =
     data.sales + data.stock > 0
       ? (data.sales / (data.sales + data.stock)) * 100
@@ -49,7 +49,7 @@ Can you provide more details?
         <div className="grid gap-2">
           <div className="bg-white">
             <p className="text-gray-500 text-sm">{data.category.name}</p>
-            <Link href={""} className="product-name font-semibold">
+            <Link href={`/products/${data.id}`} className="product-name font-semibold">
               {data.name}
             </Link>
           </div>

@@ -7,7 +7,6 @@ import "swiper/css/thumbs";
 import DetailsImage from "./interface/DetailsImage";
 
 export default function ProductDetailsSlider({ images }: { images: string[] }) {
-  console.log(images);
   const converted = images;
   const [viewSwiper, setViewSwiper] = useState<any>(null);
 

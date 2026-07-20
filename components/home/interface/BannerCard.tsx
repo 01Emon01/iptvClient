@@ -33,7 +33,7 @@ Link: ${process.env.NEXT_PUBLIC_SITE_URL}/product/${data.id}
 
 Can you provide more details?
 `;
-  const whatsappUrl = `https://wa.me/9710502368942?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/971566323742?text=${encodeURIComponent(message)}`;
   const percentSold =
     data.sales + data.stock > 0
       ? (data.sales / (data.sales + data.stock)) * 100
